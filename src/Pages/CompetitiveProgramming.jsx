@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { initStats } from "../Data/cp";
+import ICPC from "../Components/ICPC";
 
 function CompetitiveProgramming() {
   // console.log(initStats.length);
@@ -13,13 +14,14 @@ function CompetitiveProgramming() {
 
   useEffect(() => {
     loadStats();
-  },[]);
+  }, []);
 
   return (
     <section className="py-10 px-6 min-h-screen text-white">
       <h1 className="text-3xl font-bold text-center mb-10">
         Competitive Programming Profiles
       </h1>
+      <ICPC />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mx-auto max-w-6xl">
         {stats?.map((item, index) => (
           <div
