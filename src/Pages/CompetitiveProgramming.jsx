@@ -1,14 +1,27 @@
-import React from "react";
-import { allStats } from "../Data/cp";
+import React, { useEffect, useState } from "react";
+import { initStats } from "../Data/cp";
 
 function CompetitiveProgramming() {
+  // console.log(initStats.length);
+
+  const [stats, setStats] = useState([]);
+
+  const loadStats = async () => {
+    const data = await initStats();
+    setStats(data);
+  };
+
+  useEffect(() => {
+    loadStats();
+  },[]);
+
   return (
     <section className="py-10 px-6 min-h-screen text-white">
       <h1 className="text-3xl font-bold text-center mb-10">
         Competitive Programming Profiles
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 mx-auto max-w-6xl">
-        {allStats.map((item, index) => (
+        {stats?.map((item, index) => (
           <div
             className="rounded-xl shadow-lg overflow-hidden border border-zinc-700  hover:scale-105 transition-transform duration-300"
             key={index}
