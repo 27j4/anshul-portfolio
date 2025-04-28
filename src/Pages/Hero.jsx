@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <section className="flex flex-col items-center justify-center h-screen text-center px-4">
       <h1 className="text-4xl md:text-5xl font-bold mb-4">
-        Hi, I'm <span className="text-yellow-400">Anshul Pandey</span> 👋
+        Hi, I'm <span className="text-yellow-400">Anshul Pandey</span> <img src="https://media.tenor.com/SNL9_xhZl9oAAAAi/waving-hand-joypixels.gif" width="50">
       </h1>
 
       <TypewriterText />
